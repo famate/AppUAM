@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.anhembi.flavio.appuam.SobreActivity">
+
+    <TextView android:text="Aluno:  FLAVIO CEZAR AMATE" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAluno"
+        android:textSize="20dp"
+        android:textColor="#0c0c0c"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp" />
+
+    <TextView
+        android:text="RA:  20463705"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="20dp"
+        android:textColor="#ff0018"
+        android:layout_below="@+id/textAluno"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/logo"
+        android:layout_marginTop="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Disciplina: Computação Móvel"
+        android:id="@+id/textView4"
+        android:textColor="#de8f08"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="©Copyright 2015 - Anhembi Morumbi"
+        android:id="@+id/textView5"
+        android:textSize="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
