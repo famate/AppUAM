@@ -1,16 +1,38 @@
 package br.anhembi.flavio.appuam;
 
+import android.content.res.AssetFileDescriptor;
+import android.media.Image;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+
+import java.io.IOException;
+
+import static br.anhembi.flavio.appuam.R.raw.audio;
 
 public class SobreActivity extends AppCompatActivity {
+
+    // Abre o aquivo de audio no R.raw
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sobre);
+       final MediaPlayer mp  = MediaPlayer.create(this, R.raw.audio);
+        // Listener do botao que recebe o play
+        ImageButton botao =(ImageButton)findViewById(R.id.playButton);
+        botao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // dá play na bagaça
+              mp.start();
+            }
+        });
     }
 
     @Override

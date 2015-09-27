@@ -15,6 +15,23 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
+        Button botao = (Button)findViewById(R.id.button4);
+        botao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BancoController crud = new BancoController(getBaseContext());
+                EditText nome = (EditText) findViewById(R.id.editNome);
+                EditText email = (EditText) findViewById((R.id.editEmail));
+                EditText fone = (EditText) findViewById(R.id.editFone);
+                String nomeString = nome.getText().toString();
+                String emailString = email.getText().toString();
+                String foneString = fone.getText().toString();
+                String resultado;
+                resultado = crud.insereDado(nomeString, emailString, foneString);
+                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -22,19 +39,7 @@ public class CadastroActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_cadastro, menu);
 
-        Button botao = (Button)findViewById(R.id.button4);
-        botao.setOnClickListener(new View.OnClickListener()
-        { @Override public void onClick(View v) {
-                BancoController crud = new BancoController(getBaseContext());
-                EditText nome = (EditText)findViewById(R.id.editNome);
-                EditText email = (EditText)findViewById((R.id.editEmail));
-                EditText fone = (EditText)findViewById(R.id.editFone);
-                String nomeString = nome.getText().toString();
-                String emailString = email.getText().toString();
-                String foneString = fone.getText().toString();
-                String resultado; resultado = crud.insereDado(nomeString,emailString,foneString);
-                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
-            } });
+
 
         return true;
     }
